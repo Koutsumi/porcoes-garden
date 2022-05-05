@@ -8,6 +8,10 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Fernanda">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <link rel="stylesheet" href="./css/style.css">
 
     <title>HTML Básico</title>
@@ -42,7 +46,8 @@
                             <h2>Porção de batata 1</h2>
                             <p>Batata 300g</p>
                         </div>
-                        <input type="number">
+                        <input type="number" name="Porção de batata 1" value="0 " preco="25" id="" placeholder="0"
+                                oninput="addQuantidade(this)" class="quantidade">
                     </div>
 
                     <div class="itemCardapio">
@@ -50,7 +55,8 @@
                             <h2>Porção de batata 2</h2>
                             <p>Batata 300g, catupiry, chaddar e bacon</p>
                         </div>
-                        <input type="number">
+                        <input type="number" name="Porção de batata 2" value="0 " preco="35" id="" placeholder="0"
+                                oninput="addQuantidade(this)" class="quantidade">
                     </div>
 
                     <div class="itemCardapio">
@@ -58,7 +64,8 @@
                             <h2>Combo 1</h2>
                             <p>porção de batata 200g e porção de calabresa</p>
                         </div>
-                        <input type="number">
+                        <input type="number" name="Combo 1" value="0 " preco="30" id="" placeholder="0"
+                                oninput="addQuantidade(this)" class="quantidade">
                     </div>
 
                     <div class="itemCardapio">
@@ -66,7 +73,8 @@
                             <h2>Porção de calabresa acebolada</h2>
                             <p>calabresa 100g fatiada e cebola</p>
                         </div>
-                        <input type="number">
+                        <input type="number" name="Porção de calabresa acebolada" value="0 " preco="25" id="" placeholder="0"
+                                oninput="addQuantidade(this)" class="quantidade">
                     </div>
 
                     <div class="itemCardapio">
@@ -74,7 +82,8 @@
                             <h2>Porção de batata</h2>
                             <p>Batata, catupiry, chaddar e bacon</p>
                         </div>
-                        <input type="number">
+                        <input type="number" name="Porção de batata" value="0 " preco="25" id="" placeholder="0"
+                                oninput="addQuantidade(this)" class="quantidade">
                     </div>
 
                 </div>
@@ -86,9 +95,16 @@
 
                     <input type="text" name="name" placeholder="Digite o seu nome:">
                     <input type="number" name="table" placeholder="Número da mesa:">
-                    <input type="text" name="payment" placeholder="Forma de pagamento:">
+                    <select id="formaDePagamento" class="adress-input" id="cars"
+                        name="cars">
+                        <option id="cartaoDeb" value="Não selecionada">Selecione a forma de pagamento</option>
+                        <option id="cartaoDeb" value="PIX">PIX</option>
+                        <option id="dinheiro" value="Dinheiro">Dinheiro</option>
+                    </select>
+                    <input value="" class="adress-input input-troco" type="text" id="troco" placeholder="Troco para R$">
+                    <p>Chave PIX: 1199999-9999</p>
 
-                    <button>Conferir Pedido</button>
+                    <button class="functionAbre checarPedido">Conferir Pedido</button>
                     
                 </div>
             </section>
@@ -107,10 +123,37 @@
 
         </footer>
 
+        <div id="myLinks" class="popUpFunction">
+            <div class="popUp">
+    
+                <div class="popUp-Area">
+    
+                    <div id="itensSelecionados">
+                        
+                    </div>
+                    <p id="valorPagar">R$ Total</p>
+                    <p id="localEntrega">Endereço de Entrega</p>
+                    <p id="observacaoPedido"></p>
+                    <p id="formaPagamento"></p>
+                    <p id="trocoPagamento"></p>
+    
+                    <div class="botoes">
+                        <button class="closePopUp">Alterar Pedido</button>
+                        <button onclick="whatsapp()"><a id="a" href="">Confirmar Pedido</a></button>
+                        <button onclick="myFunction()">Fechar</button>
+                    </div>
+                </div>
+    
+            </div>
+    
+    
+        </div>
+
     </div>
+
     
 </body>
 
-<script src="./javascript/script.js"></script>
+<script src="./script/script.js"></script>
 
 </html>

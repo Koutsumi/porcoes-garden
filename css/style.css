@@ -53,6 +53,12 @@ main h1{
 	font-size: .9em;
 }
 
+.innerPedido{
+	font-family: var(--fontTexto);
+	color: var(--detalhes);
+	font-size: .9em;
+}
+
 /* * I M A G E N S */
 
 /* ! MOBILE */
@@ -117,13 +123,23 @@ main h1{
 		margin: 1em 0;
 	}
 
+	#formaDePagamento{
+		width: 100%;
+		height: 30px;
+		max-width: 310px;
+		border-radius: 10px;
+		outline: none;
+		border: none;
+		background-color: #f2f2f2a8;
+	}
+
 	.innerPedido button{
 		background-color: var(--principal);
 		border: none;
 		border-radius: 10px;
 		color: var(--detalhes);
 		padding: 1em ;
-		margin-top: 1em;
+		margin-top: 1em ;
 	}
 
 	footer section{
@@ -156,6 +172,48 @@ main h1{
 		border: none;
 	}
 
+}
+
+/* ! TABELA */
+
+
+.popUpFunction{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #34302f8f;
+	position: fixed;
+		top: 0;
+		left: 0;
+}
+
+#myLinks{
+	display: none;
+}
+
+.popUp{
+	width: 90%;
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--detalhes);
+	position: fixed;
+		top: 5%;
+		left: 5%;
+}
+
+.popUpArea{
+	width: 90%;
+	max-width: 1080px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 
