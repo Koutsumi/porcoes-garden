@@ -1,159 +1,234 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" contet="descrição do contúdo do site" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Fernanda" />
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" contet="descrição do contúdo do site">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Fernanda">
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
 
     <title>HTML Básico</title>
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="container">
+      <header>
+        <section>
+          <div class="innerHeader">
+            <img src="./images/logo.png" alt="Porções da Garden" />
+          </div>
+        </section>
+      </header>
 
-        <header>
+      <main>
+        <section>
+          <div class="innerCardapio">
+            <h1>Cardápio</h1>
 
-            <section>
-                <div class="innerHeader">
-                    <img src="./images/logo.png" alt="Porções da Garden">
-                    <img src="https://via.placeholder.com/50" alt="menu">
-                </div>
-            </section>
-
-        </header>
-        
-        
-        <main>
-
-            <section>
-                <div class="innerCardapio">
-
-                    <h1>Cardápio</h1>
-
-                    <div class="itemCardapio">
-                        <div class="innerItem">
-                            <h2>Porção de batata 1</h2>
-                            <p>Batata 300g</p>
-                        </div>
-                        <input type="number" name="Porção de batata 1" value="0 " preco="25" id="" placeholder="0"
-                                oninput="addQuantidade(this)" class="quantidade">
-                    </div>
-
-                    <div class="itemCardapio">
-                        <div class="innerItem">
-                            <h2>Porção de batata 2</h2>
-                            <p>Batata 300g, catupiry, chaddar e bacon</p>
-                        </div>
-                        <input type="number" name="Porção de batata 2" value="0 " preco="35" id="" placeholder="0"
-                                oninput="addQuantidade(this)" class="quantidade">
-                    </div>
-
-                    <div class="itemCardapio">
-                        <div class="innerItem">
-                            <h2>Combo 1</h2>
-                            <p>porção de batata 200g e porção de calabresa</p>
-                        </div>
-                        <input type="number" name="Combo 1" value="0 " preco="30" id="" placeholder="0"
-                                oninput="addQuantidade(this)" class="quantidade">
-                    </div>
-
-                    <div class="itemCardapio">
-                        <div class="innerItem">
-                            <h2>Porção de calabresa acebolada</h2>
-                            <p>calabresa 100g fatiada e cebola</p>
-                        </div>
-                        <input type="number" name="Porção de calabresa acebolada" value="0 " preco="25" id="" placeholder="0"
-                                oninput="addQuantidade(this)" class="quantidade">
-                    </div>
-
-                    <div class="itemCardapio">
-                        <div class="innerItem">
-                            <h2>Porção de batata</h2>
-                            <p>Batata, catupiry, chaddar e bacon</p>
-                        </div>
-                        <input type="number" name="Porção de batata" value="0 " preco="25" id="" placeholder="0"
-                                oninput="addQuantidade(this)" class="quantidade">
-                    </div>
-
-                </div>
-            </section>
-
-            <section>
-                <div class="innerPedido">
-                    <h1>Faça seu pedido</h1>
-
-                    <input type="text" name="name" placeholder="Digite o seu nome:">
-                    <input type="number" name="table" placeholder="Número da mesa:">
-                    <select id="formaDePagamento" class="adress-input" id="cars"
-                        name="cars">
-                        <option id="cartaoDeb" value="Não selecionada">Selecione a forma de pagamento</option>
-                        <option id="cartaoDeb" value="PIX">PIX</option>
-                        <option id="dinheiro" value="Dinheiro">Dinheiro</option>
-                    </select>
-                    <input value="" class="adress-input input-troco" type="text" id="troco" placeholder="Troco para R$">
-                    <p>Chave PIX: 1199999-9999</p>
-
-                    <button class="functionAbre checarPedido">Conferir Pedido</button>
-                    
-                </div>
-            </section>
-
-
-        </main>
-
-        <footer>
-
-            <section>
-                <div class="innerFooter">
-                    <p>Todos os direitos reservados</p>
-                    <p>nTec Soluções</p>
-                </div>
-            </section>
-
-        </footer>
-
-        <div id="myLinks" class="popUpFunction">
-            <div class="popUp">
-    
-                <div class="popUp-Area">
-    
-                    <div id="itensSelecionados">
-                        
-                    </div>
-                    <p id="valorPagar">R$ Total</p>
-                    <p id="localEntrega">Endereço de Entrega</p>
-                    <p id="observacaoPedido"></p>
-                    <p id="formaPagamento"></p>
-                    <p id="trocoPagamento"></p>
-    
-                    <div class="botoes">
-                        <button class="closePopUp">Alterar Pedido</button>
-                        <button onclick="whatsapp()"><a id="a" href="">Confirmar Pedido</a></button>
-                        <button onclick="myFunction()">Fechar</button>
-                    </div>
-                </div>
-    
+            <div class="itemCardapio">
+              <div class="innerItem">
+                <h2>Porção de batata 1</h2>
+                <p>Batata 300g</p>
+              </div>
+              <input
+                type="number"
+                name="Porção de batata 1"
+                value="0 "
+                preco="25.50"
+                id=""
+                placeholder="0"
+                oninput="addItem(this)"
+                class="quantidade produto"
+                min="0"
+              />
             </div>
-    
-    
-        </div>
 
+            <div class="itemCardapio">
+              <div class="innerItem">
+                <h2>Porção de batata 2</h2>
+                <p>Batata 300g, catupiry, chaddar e bacon</p>
+              </div>
+              <input
+                type="number"
+                name="Porção de batata 2"
+                value="0 "
+                preco="35"
+                id=""
+                placeholder="0"
+                oninput="addItem(this)"
+                class="quantidade produto"
+                min="0"
+              />
+            </div>
+
+            <div class="itemCardapio">
+              <div class="innerItem">
+                <h2>Combo 1</h2>
+                <p>porção de batata 200g e porção de calabresa</p>
+              </div>
+              <input
+                type="number"
+                name="Combo 1"
+                value="0 "
+                preco="30"
+                id=""
+                placeholder="0"
+                oninput="addItem(this)"
+                class="quantidade produto"
+                min="0"
+              />
+            </div>
+
+            <div class="itemCardapio">
+              <div class="innerItem">
+                <h2>Porção de calabresa acebolada</h2>
+                <p>calabresa 100g fatiada e cebola</p>
+              </div>
+              <input
+                type="number"
+                name="Porção de calabresa acebolada"
+                value="0"
+                preco="25"
+                id=""
+                placeholder="0"
+                oninput="addQuantidade(this)"
+                class="quantidade produto"
+              />
+            </div>
+
+            <div class="itemCardapio">
+              <div class="innerItem">
+                <h2>Porção de batata</h2>
+                <p>Batata, catupiry, chaddar e bacon</p>
+              </div>
+              <input
+                type="number"
+                name="PB"
+                value="0 "
+                preco="25"
+                id=""
+                placeholder="0"
+                oninput="addQuantidade(this)"
+                class="quantidade produto"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="innerPedido">
+            <h1>Faça seu pedido</h1>
+
+            <input
+              id="nome"
+              type="text"
+              name="nome"
+              placeholder="Digite o seu nome:"
+            />
+            <input
+              id="mesa"
+              type="number"
+              name="table"
+              placeholder="Número da mesa:"
+            />
+            <select
+              id="formaDePagamento"
+              class="adress-input"
+              id="cars"
+              name="cars"
+            >
+              <option id="cartaoDeb" value="Não selecionada">
+                Selecione a forma de pagamento
+              </option>
+              <option id="cartaoDeb" value="PIX">PIX</option>
+              <option id="dinheiro" value="Dinheiro">Dinheiro</option>
+            </select>
+            <input
+              value=""
+              class="adress-input input-troco"
+              type="text"
+              id="troco"
+              placeholder="Troco para R$"
+            />
+            <p>Chave PIX: 1199999-9999</p>
+
+            <button class="functionAbre checarPedido">Conferir Pedido</button>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <section>
+          <div class="innerFooter">
+            <p>Todos os direitos reservados</p>
+            <p>nTec Soluções</p>
+          </div>
+        </section>
+      </footer>
+
+      <div id="myLinks" class="popUpFunction">
+        <div class="popUp">
+          <div class="popUp-Area">
+            <h2>Seu pedido</h2>
+
+            <section id="itensSelecionados">
+              <div class="itensSelecionados-content">
+                <div class="itensSelecionados-cabecalho">
+                  <p style="width: 60vw; border-bottom: 1px dashed #f2f2f2;">Item</p>
+                  <p style="width: 20vw; border-bottom: 1px dashed #f2f2f2; text-align: center;">Qnt.</p>
+                  <p style="width: 20vw; border-bottom: 1px dashed #f2f2f2; text-align: center;">Valor</p>
+                </div>
+                <div class="itensSelecionados-list">
+                  <p style="width: 60vw;" id="itemList"></p>
+                  <p style="width: 20vw; text-align: center;" id="quantList"></p>
+                  <p style="width: 20vw; text-align: center;" id="subTotalList"></p>
+                </div>
+              </div>
+            </section>
+
+            <section class="infoPedido">
+                <div class="infoPedido-content">
+                    <p class="precoTotal">TOTAL: R$ <span id="fullPrice">0</span></p>
+                    <p>Nome: <span id="nomeCliente"></span></p>
+                    <p>Mesa: <span id="mesaCliente"></span></p>
+                    <p>Pagamento em: <span id="formaPagamento"></span></p>
+                    <p>Troco para: R$ <span id="trocoPagamento"></span></p>
+                </div>
+            </section>
+
+            <div class="botoes">
+                <div class="botoes-content">
+                    <button id="changeDelivery" class="closePopUp button-popUp">
+                        Alterar
+                    </button>
+                    <button class="button-popUp" onclick="whatsapp()">
+                    <a id="a" href="">Confirmar</a>
+                    </button>
+                </div>
+              
+              <button class="button-popUp" id="closeDelivery" onclick="myFunction()">Fechar</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    
-</body>
+    <textarea
+      style="position: fixed;"
+      id="textArea"
+    ></textarea>
+  </body>
 
-<script src="./script/script.js"></script>
-
+  <script src="./script/delivrey.js"></script>
+  <script src="./script/whats.js"></script>
 </html>

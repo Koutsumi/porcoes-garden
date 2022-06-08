@@ -9,6 +9,8 @@ const meusItens = [];
 const meusPrices = [];
 const meusQuant = [];
 
+var ItensAddTest = document.querySelectorAll("input[class*='add']");
+
 function addQuantidade(input) {
   if (input.value > 0) {
     input.classList.add("add");
@@ -16,7 +18,7 @@ function addQuantidade(input) {
     input.classList.remove("add");
   }
 
-  // * Para caso o pedido seja refeito a array não guarde info anteriores
+  //Para caso o pedido seja refeito a array não guarde info anteriores
   valorTotalPagar.length = 0;
   meusItens.length = 0;
   meusPrices.length = 0;
@@ -24,7 +26,7 @@ function addQuantidade(input) {
 
   for (let i = 0; i < 10; i++) {
     if ($(".quantidade").is(".add")) {
-      var ItensAdd = document.getElementsByTagName("input")[i];
+      var ItensAdd = document.querySelectorAll(".add")[i];
       var nomeItem = ItensAdd.name;
       var quantItem = ItensAdd.value;
 
@@ -40,6 +42,23 @@ function addQuantidade(input) {
   }
 }
 
+// for (let i = 0; i < 10; i++) {
+//   if ($(".quantidade").is(".add")) {
+//     var ItensAdd = document.querySelectorAll(".quantidade")[i];
+//     var nomeItem = ItensAdd.name;
+//     var quantItem = ItensAdd.value;
+
+//     var priceAdd = ItensAdd.getAttribute("preco");
+
+//     if (quantItem > 0) {
+//       meusItens.push(nomeItem);
+//       meusQuant.push(quantItem);
+//       meusPrices.push(priceAdd);
+//       valorTotalPagar.push(quantItem * priceAdd);
+//     }
+//   }
+// }
+
 function calcSoma(valorTotalPagar) {
   pagaTotal = 0;
   for (let z = 0; z < valorTotalPagar.length; z++) {
@@ -54,12 +73,15 @@ let itens;
 let quantidade;
 let valorItem;
 
+const nomeEntrega = document.getElementById("nome");
+const mesaEntrega = document.getAnimations("mesa");
+
 const cidadeEntrega = document.getElementById("cidade");
 const bairroEntrega = document.getElementById("bairro");
 const enderecoEntrega = document.querySelector(".adress #rua");
 const numeroEntrega = document.querySelector(".adress #num");
 const complementoEntrega = document.getElementById("complemento");
-const observacaoEntrega = document.getElementById("obvervacao");
+// const observacaoEntrega = document.getElementById("obvervacao");
 const pagamentoEntrega = document.getElementById("formaDePagamento");
 const trocoEntrega = document.getElementById("troco");
 
@@ -67,9 +89,9 @@ $(".checarPedido").click(function () {
   let imprimirTotal = document.getElementById("valorPagar");
   imprimirTotal.innerHTML = `<h2> SUBTOTAL R$${calcSoma(valorTotalPagar)}</h2>`;
   let imprimirEndereco = document.getElementById("localEntrega");
-  imprimirEndereco.innerHTML = `<p>Local de entrega: ${enderecoEntrega.value}, ${numeroEntrega.value}  - ${complementoEntrega.value} -  ${bairroEntrega.value}/${cidadeEntrega.value}</p>`;
-  let imprimirObservacao = document.getElementById("observacaoPedido");
-  imprimirObservacao.innerHTML = `Observações: ${observacaoEntrega.value}`;
+  imprimirEndereco.innerHTML = `<p>Local de entrega: ${mesaEntrega.value}</p>`;
+  // let imprimirObservacao = document.getElementById("observacaoPedido");
+  // imprimirObservacao.innerHTML = `Observações: ${observacaoEntrega.value}`;
   let imprimirFormaDePagamento = document.querySelector("#formaPagamento");
   imprimirFormaDePagamento.innerHTML = `Forma de Pagamento: ${formaDePagamento.value}`;
   let imprimirTroco = document.querySelector("#trocoPagamento");
@@ -110,14 +132,12 @@ $(".checarPedido").click(function () {
     tabelaId.appendChild(valorItem);
   }
   textAreaId.appendChild(
-    document.createTextNode(
-      `Local de entrega: ${enderecoEntrega.value}, ${numeroEntrega.value}  - ${complementoEntrega.value} -  ${bairroEntrega.value}/${cidadeEntrega.value} %0D`
-    )
+    document.createTextNode(`Local de entrega: ${mesaEntrega.value} %0D`)
   );
 
-  textAreaId.appendChild(
-    document.createTextNode(`Observações: ${observacaoEntrega.value} %0D`)
-  );
+  // textAreaId.appendChild(
+  //   document.createTextNode(`Observações: ${observacaoEntrega.value} %0D`)
+  // );
 
   textAreaId.appendChild(
     document.createTextNode(`Forma de Pagamento: ${formaDePagamento.value} %0D`)
@@ -141,20 +161,19 @@ function zerar() {
 
 // ! POP UP
 
-const popUp = document.querySelector('.functionAbre')
-    popUp.addEventListener('click', myFunction)
+const popUp = document.querySelector(".functionAbre");
+popUp.addEventListener("click", myFunction);
 
-    const popUpClose = document.querySelector('.closePopUp')
-    popUpClose.addEventListener('click', myFunction)
+const popUpClose = document.querySelector(".closePopUp");
+popUpClose.addEventListener("click", myFunction);
 
-    function myFunction() {
-      console.log('teste')
-        var x = document.getElementById("myLinks");
-        
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
-        }
+function myFunction() {
+  console.log("teste");
+  var x = document.getElementById("myLinks");
 
-    }
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
