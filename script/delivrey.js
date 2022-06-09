@@ -97,7 +97,7 @@ closeDelivery.addEventListener('click', () =>{
 
 function printCart(){
   textArea.appendChild(
-    document.createTextNode(`Pedido: %0D %0D`)
+    document.createTextNode(`Pedido: %0D ========== %0D`)
   )
   
   for(let i = 0; i < cartItem.length; i++){
@@ -120,7 +120,7 @@ function printCart(){
     document.getElementById('subTotalList').appendChild(tagElement);
 
     textArea.appendChild(
-      document.createTextNode(` ========== %0D ${cartItem[i]}: %0D Quantidade: ${cartQuant[i]} Valor: R$${cartSubTotal[i]} %0D %0D`)
+      document.createTextNode(`${cartItem[i]}: %0D Quantidade: ${cartQuant[i]} Valor: R$${cartSubTotal[i]} %0D ========== %0D`)
     )
   }
 }
