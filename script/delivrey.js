@@ -38,6 +38,7 @@ let createdTextArea;
 function resetCart() {
   cartItem.length = 0;
   cartQuant.length = 0;
+  cartSubTotal.length = 0;
   cartPrice.length = 0;
 }
 
@@ -58,7 +59,7 @@ function printTotal(){
   document.getElementById('fullPrice').innerHTML = fixedPrice.replace('.', ',');
 
   textArea.appendChild(
-    document.createTextNode(`Total: R$${fixedPrice} %0D`)
+    document.createTextNode(`%0D %0D Total: R$${fixedPrice}`)
   )
 }
 
@@ -95,6 +96,9 @@ closeDelivery.addEventListener('click', () =>{
 
 
 function printCart(){
+  textArea.appendChild(
+    document.createTextNode(`Pedido %0D %0D`)
+  )
   
   for(let i = 0; i < cartItem.length; i++){
     // * Itens List
@@ -116,7 +120,7 @@ function printCart(){
     document.getElementById('subTotalList').appendChild(tagElement);
 
     textArea.appendChild(
-      document.createTextNode(`${cartItem[i]} ${cartQuant[i]} R$${cartSubTotal[i]} %0D`)
+      document.createTextNode(`${cartItem[i]}: Qtd: ${cartQuant[i]} R$${cartSubTotal[i]} %0D %0D`)
     )
   }
 }
@@ -163,9 +167,9 @@ function calcTotal() {
         total = subTotal + total;
     }
     // * print total on modal
-    printTotal()
     printCart()
     printAdress()
+    printTotal()
       return total
 }
 
