@@ -59,7 +59,7 @@ function printTotal(){
   document.getElementById('fullPrice').innerHTML = fixedPrice.replace('.', ',');
 
   textArea.appendChild(
-    document.createTextNode(`%0D Total: R$${fixedPrice}`)
+    document.createTextNode(`%0A Total: R$${fixedPrice}`)
   )
 }
 
@@ -97,7 +97,7 @@ closeDelivery.addEventListener('click', () =>{
 
 function printCart(){
   textArea.appendChild(
-    document.createTextNode(`Descrição do pedido: %0D ==================== %0D %0D`)
+    document.createTextNode(`Descrição do pedido: %0A ==================== %0A %0A`)
   )
   
   for(let i = 0; i < cartItem.length; i++){
@@ -120,7 +120,7 @@ function printCart(){
     document.getElementById('subTotalList').appendChild(tagElement);
 
     textArea.appendChild(
-      document.createTextNode(`${cartItem[i]}: %0D Quantidade: ${cartQuant[i]} Valor: R$${cartSubTotal[i]} %0D %0D ==================== %0D %0D`)
+      document.createTextNode(`${cartItem[i]}: %0A Quantidade: ${cartQuant[i]} Valor: R$${cartSubTotal[i]} %0A %0A ==================== %0A %0A`)
     )
   }
 }
@@ -137,19 +137,19 @@ function printAdress(){
   document.getElementById('trocoPagamento').innerHTML = printChange;
 
   textArea.appendChild(
-    document.createTextNode(`Nome: ${printClientName} %0D`)
+    document.createTextNode(`Nome: ${printClientName} %0A`)
   )
 
   textArea.appendChild(
-    document.createTextNode(`Mesa: ${printClientTable} %0D`)
+    document.createTextNode(`Mesa: ${printClientTable} %0A`)
   )
 
   textArea.appendChild(
-    document.createTextNode(`Forma de pagamento: ${printPayment} %0D`)
+    document.createTextNode(`Forma de pagamento: ${printPayment} %0A`)
   )
 
   textArea.appendChild(
-    document.createTextNode(`Troco para: R$${printChange} %0D`)
+    document.createTextNode(`Troco para: R$${printChange} %0A`)
   )
 }
 
