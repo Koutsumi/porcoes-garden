@@ -42,13 +42,13 @@
               <input
                 type="number"
                 name="Porção de batata 1"
-                value="0 "
+                value="0"
                 preco="25.50"
                 id=""
                 placeholder="0"
                 oninput="addItem(this)"
                 class="quantidade produto"
-                min="0"
+                min = '0'
               />
             </div>
 
@@ -60,13 +60,13 @@
               <input
                 type="number"
                 name="Porção de batata 2"
-                value="0 "
+                value="0"
                 preco="35"
                 id=""
                 placeholder="0"
                 oninput="addItem(this)"
                 class="quantidade produto"
-                min="0"
+                min = '0'
               />
             </div>
 
@@ -78,13 +78,13 @@
               <input
                 type="number"
                 name="Combo 1"
-                value="0 "
+                value="0"
                 preco="30"
                 id=""
                 placeholder="0"
                 oninput="addItem(this)"
                 class="quantidade produto"
-                min="0"
+                min = '0'
               />
             </div>
 
@@ -102,6 +102,7 @@
                 placeholder="0"
                 oninput="addQuantidade(this)"
                 class="quantidade produto"
+                min = '0'
               />
             </div>
 
@@ -113,12 +114,13 @@
               <input
                 type="number"
                 name="PB"
-                value="0 "
+                value="0"
                 preco="25"
                 id=""
                 placeholder="0"
                 oninput="addQuantidade(this)"
                 class="quantidade produto"
+                min = '0'
               />
             </div>
           </div>
@@ -223,10 +225,9 @@
       </div>
     </div>
 
-    <textarea
-      style="position: fixed; visibility: hidden"
-      id="textArea"
-    ></textarea>
+    <div style="position: fixed;" id="localTextArea">
+
+    </div>
   </body>
 
   <script src="./script/delivrey.js"></script>

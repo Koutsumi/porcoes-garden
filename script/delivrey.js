@@ -19,8 +19,11 @@ function myFunction() {
 function addItem(input) {
   if (input.value >= 1) {
     input.classList.add("add");
-  } else if (this.value <= 0) {
+    console.log("IF")
+  } 
+  else {
     input.classList.remove("add");
+    console.log("ELSE")
   }
 }
 
@@ -29,7 +32,8 @@ let cartQuant = [];
 let cartPrice = [];
 let cartSubTotal = [];
 let total = 0;
-let textArea = document.getElementById('textArea');
+let localTextArea = document.getElementById('localTextArea');
+let createdTextArea;
 
 function resetCart() {
   cartItem.length = 0;
@@ -37,7 +41,19 @@ function resetCart() {
   cartPrice.length = 0;
 }
 
+function createTextArea(){
+  createdTextArea = localTextArea.innerHTML = `<textarea> </textarea>`
+  createdTextArea = document.querySelector('textarea');
+  createdTextArea.setAttribute('id', 'textArea')
+}
+
+function resetTextArea(){
+  let removeTextArea = document.querySelector('textarea');
+  removeTextArea.remove();
+}
+
 function printTotal(){
+  let textArea = document.getElementById('textArea');
   let fixedPrice = total.toFixed(2);
   document.getElementById('fullPrice').innerHTML = fixedPrice.replace('.', ',');
 
@@ -61,7 +77,7 @@ function resetPrintCart (){
     quantChild[i].remove();
     subTotalChild[i].remove();
   }
-  console.log('teste')
+  console.log('reset cart')
 }
 
 let changeDelivery = document.getElementById('changeDelivery');
@@ -69,10 +85,12 @@ let closeDelivery = document.getElementById('closeDelivery');
 
 changeDelivery.addEventListener('click', () =>{
   resetPrintCart ()
+  resetTextArea()
 })
 
 closeDelivery.addEventListener('click', () =>{
   resetPrintCart ()
+  resetTextArea()
 })
 
 
@@ -127,7 +145,7 @@ function printAdress(){
   )
 
   textArea.appendChild(
-    document.createTextNode(`Troco para: ${printChange} %0D`)
+    document.createTextNode(`Troco para: R$${printChange} %0D`)
   )
 }
 
@@ -166,5 +184,6 @@ products.addEventListener("click", () => {
     cartQuant.push(quantItem);
     cartPrice.push(priceItem);
   });
+  createTextArea();
   calcTotal();
 });
