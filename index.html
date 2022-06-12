@@ -31,8 +31,17 @@
 
       <main>
         <section>
+          <div class="tutorial">
+            <div class="tutorialContent">
+              <h1>Cardápio</h1>
+              <p>
+                Para realizar o seu pedido selecione os itens desejados e informe os seus dados. Você será redirecionado para o seu WhatsApp, onde deverá enviar a mensagem que já contém as informações do seu pedido.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
           <div class="innerCardapio">
-            <h1>Cardápio</h1>
 
             <div class="itemCardapio">
               <div class="innerItem">
@@ -125,7 +134,9 @@
               id="troco"
               placeholder="Troco para R$"
             />
-            <p>Chave PIX: 1199999-9999</p>
+            <p  style="font-size: 1.3em;">Chave PIX: 11982608171 <button style="background-color:inherit ;" onclick="copyToClipBoard()"><img src="./images/copiar-texto.png" alt=""></button></p>
+            <textarea id="pix" class="esconde">11982608171</textarea>
+            
 
             <button class="functionAbre checarPedido">Conferir Pedido</button>
           </div>
@@ -196,4 +207,15 @@
 
   <script src="./script/delivrey.js"></script>
   <script src="./script/whats.js"></script>
+
+  <script>
+  function copyToClipBoard() {
+
+var content = document.getElementById('pix');
+
+content.select();
+document.execCommand('copy');
+}
+    
+</script>
 </html>
